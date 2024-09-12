@@ -73,7 +73,7 @@ function returnTasks (status = 'all') {
     for (let index in tasks) {
 
         if (status !== 'all') {
-            const filter = status === 'completed' ? "complated" : ""
+            const filter = status === 'completed' ? "completed" : ""
             const task = tasks[index]
 
             if (task.status === filter) {
