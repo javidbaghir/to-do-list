@@ -116,11 +116,9 @@ addTaskBtn.addEventListener("click", function () {
           }
         
           button.classList.add("active");
-
-    if (e.target.tagName === 'BUTTON') { 
         
         returnTasks(e.target.dataset.status)
-    }
+   
 })
 
 
