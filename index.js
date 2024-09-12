@@ -12,7 +12,6 @@ let editIndex = ''
 
 returnTasks();
 
-
 function deleteTask (index) {
     tasks.splice(index, 1)
 };
@@ -40,7 +39,6 @@ function createUI(index) {
     </button>
   </div>
   </div>`
-
 }
 
 function changeStatus(index, e) {
@@ -66,23 +64,20 @@ function deleteTask (index) {
     returnTasks();
 }
 
-
 function returnTasks (status = 'all') {
     showtasks.innerHTML = ''
 
     for (let index in tasks) {
 
         if (status !== 'all') {
-            const filter = status === 'completed' ? "completed" : ""
             const task = tasks[index]
 
-            if (task.status === filter) {
+            if (task.status === status) {
                 showtasks.innerHTML += createUI(index)
             }
         } else {
             showtasks.innerHTML += createUI(index)
         }
-
     }
 }
 
@@ -100,7 +95,6 @@ addTaskBtn.addEventListener("click", function () {
 
         } else {
             const item = { name: value, status: "pending" };
-  
             tasks.unshift(item);
         }
   
@@ -111,16 +105,22 @@ addTaskBtn.addEventListener("click", function () {
     returnTasks();
   });
 
-
   filterBtn.addEventListener("click", function(e) {
+
+    const button = e.target.closest("button")
+
+ 
+        if (button) {
+            const active_button = document.querySelector(".navigate.active");
+            active_button.classList.remove("active"); // aktiv butonun class-i silinir
+          }
+        
+          button.classList.add("active");
+
     if (e.target.tagName === 'BUTTON') { 
         
         returnTasks(e.target.dataset.status)
-        
     }
-
-    // console.log(e.target.dataset.status);
-    
 })
 
 

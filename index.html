@@ -8,6 +8,13 @@
 
     <style>
       @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
+
+      button.active {
+        background: #cfcfcf;
+        color: #fff;
+        font-weight: bold;
+      }
+
     </style>
   </head>
   <body>
@@ -26,17 +33,17 @@
 
       <div class="mt-[15px] flex gap-[9px] filter-btn">
         <button data-status="all"
-          class="text-[14px] border py-[5px] px-[20px] min-w-[124px] text-white rounded-[6px] bg-[#8F8F8F]"
+          class="navigate text-[14px] border active py-[5px] px-[20px] min-w-[124px] rounded-[6px]"
         >
           All
         </button>
         <button data-status="complated"
-          class="text-[14px] border py-[5px] px-[20px] min-w-[124px] rounded-[6px]"
+          class="navigate text-[14px] border py-[5px] px-[20px] min-w-[124px] rounded-[6px]"
         >
           Complated
         </button>
         <button data-status="pending"
-          class="text-[14px] border py-[5px] px-[20px] min-w-[124px] rounded-[6px]"
+          class="navigate text-[14px] border py-[5px] px-[20px] min-w-[124px] rounded-[6px]"
         >
           Pending
         </button>
